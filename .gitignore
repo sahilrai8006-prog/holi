@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 static/uploads/*
+!static/uploads/raishab_original.jpeg
 static/outputs/*
 !static/uploads/.gitkeep
 !static/outputs/.gitkeep
