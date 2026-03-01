@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raishab Holi | Cinematic AI Celebration</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">RAISHAB <span>HOLI</span></div>
+            <div class="nav-links">
+                <button id="music-btn" class="icon-btn" title="Toggle Festive Beats">🎵</button>
+                <div id="theme-pill" class="theme-pill">
+                    <span class="dot"></span> Neon Holi
+                </div>
+                <a href="#features">Features</a>
+                <a href="#wish">Wish Generator</a>
+                <a href="#app" class="nav-cta">Launch App</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge fade-in">✨ Powered by RAISHAB</div>
+                <h1 class="glitch-text fade-in">Experience the Joy of <br><span class="gradient-text">Raishab Holi
+                        Magic</span></h1>
+                <p class="hero-sub fade-in">The world's first cinematic Holi face splash generator. <br>Turn your photos
+                    into award-winning festive masterpieces instantly.</p>
+                <div class="hero-btns fade-in">
+                    <a href="#app" class="btn primary-btn pulse">Try Now</a>
+                    <a href="#wish" class="btn secondary-btn">Generate Wish</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="visual-card">
+                    <img src="/static/uploads/raishab_original.jpeg" alt="Raishab Holi Original">
+                    <div class="floating-badge top">Raishab Edition</div>
+                    <div class="floating-badge bottom">4K RAISHAB EDITION</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section id="app" class="app-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Splash the <span>Magic</span></h2>
+                    <p>Upload your portrait and let our neural engine do the rest.</p>
+
+                    <!-- Theme Selector -->
+                    <div class="theme-selector-container">
+                        <label>Choose Your Vibe:</label>
+                        <div class="theme-options">
+                            <button class="theme-btn active" data-theme="classic"
+                                style="--col: #FF1493">Classic</button>
+                            <button class="theme-btn" data-theme="neon" style="--col: #39FF14">Neon</button>
+                            <button class="theme-btn" data-theme="vintage" style="--col: #8B4513">Vintage</button>
+                            <button class="theme-btn" data-theme="pastel" style="--col: #FFB6C1">Pastel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-container" id="drop-zone">
+                    <div class="glass-card uploader">
+                        <div class="upload-content" id="upload-prompt">
+                            <div class="upload-icon">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h3>Drop your photo here</h3>
+                            <p>or click to browse local files</p>
+                            <input type="file" id="file-input" hidden accept="image/*">
+                        </div>
+
+                        <div class="processing-status hidden" id="loader">
+                            <div class="modern-spinner"></div>
+                            <p>AI is analyzing facial landmarks...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-section hidden" id="result-view">
+                    <div class="comparison-card">
+                        <div class="comparison-container">
+                            <div class="img-wrapper before">
+                                <img id="before-img" src="" alt="Before">
+                            </div>
+                            <div class="img-wrapper after">
+                                <img id="after-img" src="" alt="After">
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="slider" id="slider">
+                            <div class="slider-divider"></div>
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn accent-btn" onclick="location.reload()">Upload New</button>
+                        <a id="download-btn" href="#" download="holi_splash.png" class="btn primary-btn">Download 4K
+                            Result</a>
+                        <button id="share-btn" class="btn secondary-btn">🚀 Share</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features section-padding">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI Face Detection</h3>
+                        <p>High-precision neural tracking ensures colors wrap naturally around your facial features.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>Organic Texture</h3>
+                        <p>Our algorithm simulates granular powder particles, not flat digital paint.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>Cinematic Lighting</h3>
+                        <p>Subtle bloom, vignette, and tone mapping for a professional DSLR photoshoot look.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wish Generator -->
+        <section id="wish" class="wish-section section-padding">
+            <div class="container">
+                <div class="glass-card wish-card fade-in">
+                    <div class="wish-header">
+                        <h2>Spread the <span>Joy</span></h2>
+                        <p>Generate a customized cinematic Holi wish for your loved ones.</p>
+                    </div>
+                    <div class="wish-form">
+                        <input type="text" id="wish-name" placeholder="Enter recipient's name" class="glass-input">
+                        <label class="btn secondary-btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
+                            📷 Add Photo
+                            <input type="file" id="wish-photo" hidden accept="image/*">
+                        </label>
+                        <button onclick="generateHoliWish()" class="btn primary-btn">Generate Wish</button>
+                    </div>
+                    <div id="wish-output" class="wish-result hidden">
+                        <div id="wish-photo-display" class="wish-photo-preview hidden">
+                            <img id="selected-wish-img" src="" alt="Holi Wish Photo">
+                        </div>
+                        <h3 id="wish-text"></h3>
+                        <div class="wish-decorative">🎨 ✨ 🌈</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Raishab Holi. All Rights Reserved.</p>
+            <div class="footer-socials">
+                <span>#RaishabHoli</span>
+                <span>#CelebrateRAISHAB_0001_</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+static/uploads/*
+static/outputs/*
+!static/uploads/.gitkeep
+!static/outputs/.gitkeep
+.env
+venv/
+.vscode/
