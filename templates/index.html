@@ -21,7 +21,11 @@
         <div class="nav-content">
             <div class="logo">RAISHAB <span>HOLI</span></div>
             <div class="nav-links">
-                <button id="music-btn" class="icon-btn" title="Toggle Festive Beats">🎵</button>
+                <div class="music-controls">
+                    <button id="music-btn" class="icon-btn" title="Toggle Festive Beats">🎵</button>
+                    <button id="skip-btn" class="icon-btn" title="Next Track"
+                        style="margin-left: -0.5rem; font-size: 0.8rem;">⏭️</button>
+                </div>
                 <div id="theme-pill" class="theme-pill">
                     <span class="dot"></span> Neon Holi
                 </div>
@@ -44,6 +48,16 @@
                 <div class="hero-btns fade-in">
                     <a href="#app" class="btn primary-btn pulse">Try Now</a>
                     <a href="#wish" class="btn secondary-btn">Generate Wish</a>
+                </div>
+                <!-- Countdown -->
+                <div class="countdown-container fade-in">
+                    <p>Holi 2026 Celebration Begins In:</p>
+                    <div class="countdown">
+                        <div class="time-block"><span id="days">00</span><span>Days</span></div>
+                        <div class="time-block"><span id="hours">00</span><span>Hours</span></div>
+                        <div class="time-block"><span id="minutes">00</span><span>Mins</span></div>
+                        <div class="time-block"><span id="seconds">00</span><span>Secs</span></div>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual fade-in">
@@ -166,6 +180,13 @@
                         </div>
                         <h3 id="wish-text"></h3>
                         <div class="wish-decorative">🎨 ✨ 🌈</div>
+                        <div class="wish-actions"
+                            style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                            <button id="download-card-btn" class="btn primary-btn" onclick="downloadHoliCard()">📥
+                                Download Card</button>
+                            <button id="copy-wish-btn" class="btn secondary-btn" onclick="copyWishText()">📋 Copy
+                                Text</button>
+                        </div>
                     </div>
                 </div>
             </div>
